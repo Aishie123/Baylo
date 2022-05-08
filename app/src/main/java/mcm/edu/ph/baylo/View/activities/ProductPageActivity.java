@@ -10,26 +10,21 @@ import android.view.WindowManager;
 
 import mcm.edu.ph.baylo.R;
 
-public class MessageActivity extends AppCompatActivity {
+public class ProductPageActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             Window w = getWindow();
             w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS); // for layout to overlap with status bar
         }
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-
-        setContentView(R.layout.activity_message);
+        setContentView(R.layout.activity_product_page);
     }
 
     // method if "<" button is pressed ------------------------------------------------------------------------------------
-    public void backToInbox(View v) {
+    public void backFromProduct(View v) {
         finish();
     }
-
-
 }

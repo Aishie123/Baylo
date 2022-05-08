@@ -30,7 +30,7 @@ import mcm.edu.ph.baylo.View.fragments.ChatsFragment;
 import mcm.edu.ph.baylo.View.fragments.MeFragment;
 
 public class MainActivity extends AppCompatActivity {
-    VideoView splash;
+
     private boolean bayloAcc = false;
     BottomNavigationView navigation;
     final Fragment fragment1 = new HomeFragment();
@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
             Window w = getWindow();
             w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS); // for layout to overlap with status bar
         }
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
         MyStateSaver data = (MyStateSaver) getLastNonConfigurationInstance();
         if (data != null) {
@@ -112,7 +113,6 @@ public class MainActivity extends AppCompatActivity {
     private void initUI() {
         setContentView(R.layout.activity_main);
 
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
@@ -129,6 +129,11 @@ public class MainActivity extends AppCompatActivity {
         if (extras != null) {
             bayloAcc = extras.getBoolean("key");
         }
+    }
+
+    public void openItem(View v) {
+        Intent i = new Intent(MainActivity.this, ProductPageActivity.class);
+        startActivity(i);
     }
 
     public void openChat(View v) {

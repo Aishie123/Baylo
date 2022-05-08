@@ -113,7 +113,6 @@
         android:id="@+id/btnLogIn"
         android:layout_width="82dp"
         android:layout_height="51dp"
-        android:autoSizeTextType="uniform"
         android:backgroundTint="@color/accentColor1"
         android:stateListAnimator="@null"
         android:translationZ="5dp"

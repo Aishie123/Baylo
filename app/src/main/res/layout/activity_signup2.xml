@@ -157,7 +157,6 @@
         android:id="@+id/btnSignUp2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:autoSizeTextType="uniform"
         android:backgroundTint="@color/accentColor1"
         android:fontFamily="@font/dosis_bold"
         android:lines="1"

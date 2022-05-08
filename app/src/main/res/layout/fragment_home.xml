@@ -183,6 +183,7 @@
                     android:layout_width="0dp"
                     android:layout_height="240dp"
                     android:layout_margin="8dp"
+                    android:onClick="openItem"
                     app:cardCornerRadius="15dp"
                     app:cardElevation="5dp">
 
@@ -220,6 +221,7 @@
                     android:gravity="start"
                     android:ellipsize="end"
                     android:lines="1"
+                    android:onClick="openItem"
                     android:padding="8dip"
                     android:text="@string/strItemName1"
                     android:textColor="@color/accentColor2"
@@ -241,6 +243,7 @@
             <TableRow>
 
                 <TextView
+                    android:onClick="openItem"
                     android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_marginStart="8dp"
@@ -272,6 +275,7 @@
                     android:gravity="start"
                     android:ellipsize="end"
                     android:lines="1"
+                    android:onClick="openItem"
                     android:paddingLeft="8dip"
                     android:paddingTop="8dip"
                     android:paddingRight="8dip"

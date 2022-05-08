@@ -112,7 +112,6 @@
         android:id="@+id/btnSignUp1"
         android:layout_width="82dp"
         android:layout_height="51dp"
-        android:autoSizeTextType="uniform"
         android:backgroundTint="@color/accentColor1"
         android:fontFamily="@font/dosis_bold"
         android:lines="1"

@@ -10,31 +10,41 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Baylo">
         <activity
+            android:name=".View.activities.ProductPageActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomTheme"/>
+        <activity
             android:name=".View.activities.MessageActivity"
             android:exported="false"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomTheme" />
         <activity
             android:name=".View.activities.AccountPromptActivity"
             android:exported="false"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomTheme" />
         <activity
             android:name=".View.activities.SignUp1Activity"
             android:exported="false"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomTheme" />
         <activity
             android:name=".View.activities.LogInActivity"
             android:exported="false"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomTheme" />
         <activity
             android:name=".View.activities.SignUp2Activity"
             android:exported="false"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomTheme" />
         <activity
             android:name=".View.activities.MainActivity"
             android:exported="true"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/LaunchingTheme">
+            android:theme="@style/CustomTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
