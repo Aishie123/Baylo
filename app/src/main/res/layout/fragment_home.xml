@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    tools:context=".View.fragments.HomeFragment">
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/baylo_logo"
+        app:layout_constraintBottom_toBottomOf="@+id/searchView"
+        app:layout_constraintEnd_toEndOf="@+id/searchView"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/searchView"
+        app:layout_constraintWidth_percent="0.3" />
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:background="@drawable/bg_search_bar"
+        android:clickable="true"
+        android:iconifiedByDefault="false"
+        android:queryBackground="@android:color/transparent"
+        android:queryHint="I'm looking for..."
+        app:layout_constraintBottom_toTopOf="@+id/tableCategories"
+        app:layout_constraintEnd_toEndOf="@+id/tableCategories"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="@+id/tableCategories"
+        app:layout_constraintWidth_percent="0.9"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TableLayout
+        android:id="@+id/tableCategories"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:stretchColumns="*"
+        android:layout_marginHorizontal="22dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtHomeTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+        <TableRow>
+
+            <TextView
+                android:id="@+id/txtCategory1"
+                android:layout_width="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:background="@color/accentColor2"
+                android:fontFamily="@font/dosis_light"
+                android:gravity="start"
+                android:lines="1"
+                android:paddingHorizontal="10dip"
+                android:paddingTop="4dip"
+                android:paddingBottom="4dip"
+                android:text="Near You"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                tools:ignore="TextContrastCheck" />
+
+            <TextView
+                android:lines="1"
+                android:id="@+id/txtCategory2"
+                android:layout_width="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/dosis_light"
+                android:gravity="start"
+                android:paddingTop="4dip"
+                android:paddingHorizontal="10dip"
+                android:paddingBottom="4dip"
+                android:alpha="0.3"
+                android:textColor="@color/black"
+                android:text="Clothes"
+                android:textSize="14sp" />
+
+            <TextView
+                android:lines="1"
+                android:id="@+id/txtCategory3"
+                android:layout_width="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/dosis_light"
+                android:gravity="start"
+                android:paddingTop="4dip"
+                android:paddingHorizontal="10dip"
+                android:paddingBottom="4dip"
+                android:alpha="0.3"
+                android:textColor="@color/black"
+                android:text="Bags"
+                android:textSize="14sp" />
+
+            <TextView
+                android:lines="1"
+                android:id="@+id/txtCategory4"
+                android:layout_width="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/dosis_light"
+                android:gravity="start"
+                android:paddingTop="4dip"
+                android:paddingHorizontal="10dip"
+                android:paddingBottom="4dip"
+                android:alpha="0.3"
+                android:textColor="@color/black"
+                android:text="Electronics"
+                android:textSize="14sp" />
+
+            <TextView
+                android:lines="1"
+                android:id="@+id/txtCategory5"
+                android:layout_width="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/dosis_light"
+                android:gravity="start"
+                android:paddingTop="4dip"
+                android:paddingHorizontal="10dip"
+                android:paddingBottom="4dip"
+                android:alpha="0.3"
+                android:textColor="@color/black"
+                android:text="Food"
+                android:textSize="14sp" />
+        </TableRow>
+
+    </TableLayout>
+
+
+    <TextView
+        android:id="@+id/txtHomeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/dosis_bold"
+        android:padding="5dp"
+        android:shadowColor="#9E9E9E"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="8"
+        android:text="ITEMS\nNEAR YOU"
+        android:textColor="@color/accentColor2"
+        android:textSize="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/homeScrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/homeScrollView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:lineHeight="50dp" />
+
+    <ScrollView
+        android:id="@+id/homeScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.63"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.90">
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:stretchColumns="*"
+            app:layout_constraintBottom_toBottomOf="@+id/homeScrollView"
+            app:layout_constraintEnd_toEndOf="@+id/homeScrollView"
+            app:layout_constraintStart_toStartOf="@+id/homeScrollView"
+            app:layout_constraintTop_toTopOf="@+id/homeScrollView">
+
+            <TableRow>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="240dp"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="5dp">
+
+                    <ImageView
+                        android:id="@+id/imgItem1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img_item1" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="240dp"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="5dp">
+
+                    <ImageView
+                        android:id="@+id/imgItem2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img_item2" />
+                </androidx.cardview.widget.CardView>
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/txtHomeItem1"
+                    android:layout_width="0dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/dosis_semibold"
+                    android:gravity="start"
+                    android:lines="1"
+                    android:padding="8dip"
+                    android:text="NINTENDO SWITCH V2"
+                    android:textColor="@color/accentColor2"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/txtHomeItem2"
+                    android:layout_width="0dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/dosis_semibold"
+                    android:gravity="start"
+                    android:lines="1"
+                    android:padding="8dip"
+                    android:text="CASIO FX-991EX CALC..."
+                    android:textColor="@color/accentColor2"
+                    android:textSize="18sp" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@color/accentColor2"
+                    android:lines="1"
+                    android:padding="20dp"
+                    android:text=""></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@color/accentColor2"
+                    android:lines="1"
+                    android:padding="20dp"
+                    android:text=""></TextView>
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/txtHomeItem1Des"
+                    android:layout_width="0dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/dosis_regular"
+                    android:gravity="start"
+                    android:lines="1"
+                    android:paddingLeft="8dip"
+                    android:paddingTop="8dip"
+                    android:paddingRight="8dip"
+                    android:paddingBottom="4dip"
+                    android:text="With 128gb memory card and..."
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txtHomeItem2Des"
+                    android:layout_width="0dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/dosis_regular"
+                    android:gravity="start"
+                    android:lines="1"
+                    android:paddingLeft="8dip"
+                    android:paddingTop="8dip"
+                    android:paddingRight="8dip"
+                    android:paddingBottom="4dip"
+                    android:text="Calculator good for engineers..."
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/txtHomeItem1Dis"
+                    android:layout_width="0dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/dosis_light"
+                    android:gravity="start"
+                    android:lines="1"
+                    android:paddingLeft="8dip"
+                    android:paddingRight="8dip"
+                    android:paddingBottom="10dip"
+                    android:text="2.7 km away"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/txtHomeItem2Dis"
+                    android:layout_width="0dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/dosis_light"
+                    android:gravity="start"
+                    android:lines="1"
+                    android:paddingLeft="8dip"
+                    android:paddingRight="8dip"
+                    android:paddingBottom="10dip"
+                    android:text="1.4 km away"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+            </TableRow>
+
+            <TableRow>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="240dp"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="5dp">
+
+                    <ImageView
+                        android:id="@+id/imgItem3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img_item3" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="240dp"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="5dp">
+
+                    <ImageView
+                        android:id="@+id/imgItem4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img_item4" />
+                </androidx.cardview.widget.CardView>
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/txtHomeItem3"
+                    android:layout_width="0dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/dosis_semibold"
+                    android:gravity="start"
+                    android:lines="1"
+                    android:padding="8dip"
+                    android:text="HONEY BUTTER AL..."
+                    android:textColor="@color/accentColor2"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/txtHomeItem4"
+                    android:layout_width="0dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/dosis_semibold"
+                    android:gravity="start"
+                    android:lines="1"
+                    android:padding="8dip"
+                    android:text="JBL FLIP 5"
+                    android:textColor="@color/accentColor2"
+                    android:textSize="18sp" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@color/accentColor2"
+                    android:lines="1"
+                    android:padding="20dp"
+                    android:text=""></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@color/accentColor2"
+                    android:lines="1"
+                    android:padding="20dp"
+                    android:text=""></TextView>
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/txtHomeItem3Des"
+                    android:layout_width="0dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/dosis_regular"
+                    android:gravity="start"
+                    android:lines="1"
+                    android:paddingLeft="8dip"
+                    android:paddingTop="8dip"
+                    android:paddingRight="8dip"
+                    android:paddingBottom="4dip"
+                    android:text="With 128gb memory card and..."
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txtHomeItem4Des"
+                    android:layout_width="0dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/dosis_regular"
+                    android:gravity="start"
+                    android:lines="1"
+                    android:paddingLeft="8dip"
+                    android:paddingTop="8dip"
+                    android:paddingRight="8dip"
+                    android:paddingBottom="4dip"
+                    android:text="Calculator good for engineers..."
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/txtHomeItem3Dis"
+                    android:layout_width="0dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/dosis_light"
+                    android:gravity="start"
+                    android:lines="1"
+                    android:paddingLeft="8dip"
+                    android:paddingRight="8dip"
+                    android:paddingBottom="10dip"
+                    android:text="2.7 km away"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/txtHomeItem4Dis"
+                    android:layout_width="0dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/dosis_light"
+                    android:gravity="start"
+                    android:lines="1"
+                    android:paddingLeft="8dip"
+                    android:paddingRight="8dip"
+                    android:paddingBottom="10dip"
+                    android:text="1.4 km away"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+            </TableRow>
+
+        </TableLayout>
+
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/signup2Logo"
+        android:layout_width="59dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginBottom="4dp"
+        android:src="@drawable/img_filterbtn"
+        app:layout_constraintBottom_toTopOf="@+id/homeScrollView"
+        app:layout_constraintEnd_toEndOf="@+id/tableCategories"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/tableCategories" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
