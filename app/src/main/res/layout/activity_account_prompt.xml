@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.activities.AccountPromptActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="0dp">
+
+
+    <ImageView
+        android:id="@+id/accPromptLogo"
+        android:layout_width="568dp"
+        android:layout_height="318dp"
+        android:layout_marginTop="68dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.3"
+        app:srcCompat="@drawable/baylo_logo" />
+
+    <TextView
+        android:id="@+id/txtaccPromptTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="102dp"
+        android:layout_marginEnd="104dp"
+        android:layout_marginBottom="-10dp"
+        android:fontFamily="@font/dosis_regular"
+        android:gravity="center"
+        android:text="Exchange your preloved goods\nwith what you need!"
+        android:textColor="@color/accentColor1"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/accPromptLogo"
+        app:layout_constraintEnd_toEndOf="@+id/accPromptLogo"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="@+id/accPromptLogo" />
+
+    <Button
+        android:id="@+id/btnAccPrompt"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:autoSizeTextType="uniform"
+        android:backgroundTint="@color/white"
+        android:elevation="5dp"
+        android:fontFamily="@font/dosis_semibold"
+        android:lines="1"
+        android:onClick="goToLogin"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="18dp"
+        android:stateListAnimator="@null"
+        android:text="SIGN IN TO BAYLO"
+        android:textColor="@color/accentColor1"
+        android:textSize="20dp"
+        android:translationZ="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/txtaccPromptTitle"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="@+id/txtaccPromptTitle"
+        app:layout_constraintTop_toBottomOf="@+id/txtaccPromptTitle"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <Button
+        android:id="@+id/btnAccPrompt2"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:autoSizeTextType="uniform"
+        android:backgroundTint="@color/accentColor1"
+        android:elevation="5dp"
+        android:fontFamily="@font/dosis_semibold"
+        android:lines="1"
+        android:onClick="goToSignUp"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="18dp"
+        android:stateListAnimator="@null"
+        android:text="CREATE AN ACCOUNT"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:translationZ="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnAccPrompt"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btnAccPrompt"
+        app:layout_constraintTop_toBottomOf="@+id/btnAccPrompt"
+        app:layout_constraintVertical_bias="0.074"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <ImageView
+        android:id="@+id/imgBtnBackLI1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.04"
+        app:layout_constraintHorizontal_bias="0.124"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.034"
+        app:layout_constraintWidth_percent="0.04"
+        app:srcCompat="@drawable/img_back_arrow" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
