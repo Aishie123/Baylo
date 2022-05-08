@@ -40,7 +40,7 @@ public class SignUp2Activity extends AppCompatActivity {
     }
 
     // method if "<" button is pressed ------------------------------------------------------------------------------------
-    public void backSU1(View v) {
+    public void backSU2(View v) {
         finish();
     }
 

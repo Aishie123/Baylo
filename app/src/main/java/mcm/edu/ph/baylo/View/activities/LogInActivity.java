@@ -48,6 +48,14 @@ public class LogInActivity extends AppCompatActivity {
         }
     }
 
+    // method if "<" button is pressed ------------------------------------------------------------------------------------
+    public void backLI(View v) {
+        Intent i = new Intent(LogInActivity.this, MainActivity.class);
+        finish();
+        i.putExtra("key",false);
+        startActivity(i);
+    }
+
     // method if "next" button is pressed ------------------------------------------------------------------------------------
     public void logIn(View v) {
         Intent i = new Intent(LogInActivity.this, MainActivity.class);

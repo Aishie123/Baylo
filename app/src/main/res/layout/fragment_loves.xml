@@ -68,14 +68,14 @@
         android:layout_height="0dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="12dp"
-        android:background="@drawable/shadow_box"
+        android:background="@drawable/shadow_box2"
         android:clickable="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintDimensionRatio="2:2.1"
         app:layout_constraintHorizontal_bias="0.099"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viewLovesTopBar"
-        app:layout_constraintWidth_percent="0.48"
+        app:layout_constraintWidth_percent="0.4"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <androidx.cardview.widget.CardView
@@ -93,7 +93,7 @@
         app:layout_constraintStart_toStartOf="@+id/viewLovesPreview"
         app:layout_constraintTop_toTopOf="@+id/viewLovesPreview"
         app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintWidth_percent="0.32"
+        app:layout_constraintWidth_percent="0.3"
         tools:ignore="SpeakableTextPresentCheck">
 
         <ImageView
@@ -108,7 +108,7 @@
         android:id="@+id/txtLovesProductName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:ellipsize="end"
         android:fontFamily="@font/dosis_bold"
         android:lines="1"
@@ -117,10 +117,10 @@
         android:textSize="14dp"
         app:layout_constraintBottom_toTopOf="@+id/txtLovesPreview"
         app:layout_constraintEnd_toEndOf="@+id/cardViewItemPreview"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/cardViewItemPreview"
         app:layout_constraintTop_toBottomOf="@+id/cardViewItemPreview"
-        app:layout_constraintWidth_percent="0.32" />
+        app:layout_constraintWidth_percent="0.3" />
 
     <TextView
         android:id="@+id/txtLovesPreview"
@@ -138,6 +138,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/txtLovesProductName"
         app:layout_constraintTop_toBottomOf="@+id/txtLovesProductName"
-        app:layout_constraintWidth_percent="0.32" />
+        app:layout_constraintWidth_percent="0.3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

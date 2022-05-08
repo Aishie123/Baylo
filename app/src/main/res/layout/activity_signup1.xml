@@ -7,17 +7,33 @@
     tools:context=".View.activities.SignUp1Activity"
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="0dp">
-
+    
     <ImageView
-        android:id="@+id/signup1Logo"
+        android:id="@+id/imgSignupLogo"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/baylo_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent="0.3"
-        app:srcCompat="@drawable/baylo_logo" />
+        app:layout_constraintWidth_percent="0.3" />
+
+
+    <ImageView
+        android:id="@+id/imgBtnBackSU1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:onClick="backSU1"
+        app:layout_constraintBottom_toBottomOf="@+id/imgSignupLogo"
+        app:layout_constraintHeight_percent="0.04"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgSignupLogo"
+        app:layout_constraintWidth_percent="0.04"
+        app:srcCompat="@drawable/img_back_arrow" />
 
     <EditText
         android:id="@+id/etSUEmail"
@@ -112,20 +128,6 @@
         app:layout_constraintTop_toBottomOf="@+id/txtSignUp1Terms"
         app:layout_constraintVertical_bias="0.125"
         app:layout_constraintWidth_percent="0.4" />
-
-    <ImageView
-        android:id="@+id/imgBtnBackSU1"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/signup1Logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.04"
-        app:layout_constraintHorizontal_bias="0.123"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/signup1Logo"
-        app:layout_constraintVertical_bias="0.553"
-        app:layout_constraintWidth_percent="0.04"
-        app:srcCompat="@drawable/img_back_arrow" />
 
     <ImageView
         android:id="@+id/imgBtnSUShowPass"

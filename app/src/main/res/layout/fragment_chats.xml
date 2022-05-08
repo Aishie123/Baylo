@@ -24,6 +24,24 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
+    <TextView
+        android:id="@+id/txtChatsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/dosis_extrabold"
+        android:gravity="center"
+        android:paddingHorizontal="5dp"
+        android:text="Chats"
+        android:textColor="@color/black"
+        android:textSize="28dp"
+        app:layout_constraintBottom_toTopOf="@+id/chatSearchView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
     <SearchView
         android:id="@+id/chatSearchView"
         android:layout_width="0dp"
@@ -39,28 +57,11 @@
         app:layout_constraintBottom_toBottomOf="@+id/viewChatTopBar"
         app:layout_constraintEnd_toEndOf="@+id/txtChatsTitle"
         app:layout_constraintHeight_percent="0.05"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/txtChatsTitle"
         app:layout_constraintTop_toBottomOf="@+id/txtChatsTitle"
         app:layout_constraintWidth_percent="0.9"
         tools:ignore="TouchTargetSizeCheck" />
-
-    <TextView
-        android:id="@+id/txtChatsTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/dosis_extrabold"
-        android:gravity="center"
-        android:paddingHorizontal="5dp"
-        android:text="Chats"
-        android:textColor="@color/black"
-        android:textSize="28dp"
-        app:layout_constraintBottom_toTopOf="@+id/chatSearchView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
 
 
     <View
@@ -69,7 +70,7 @@
         android:layout_height="0dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="12dp"
-        android:background="@drawable/shadow_box"
+        android:background="@drawable/shadow_box2"
         android:clickable="true"
         android:onClick="openChat"
         app:layout_constraintEnd_toEndOf="parent"
@@ -95,7 +96,7 @@
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="@+id/viewChatsPreview"
         app:layout_constraintTop_toTopOf="@+id/viewChatsPreview"
-        app:layout_constraintWidth_percent="0.175"
+        app:layout_constraintWidth_percent="0.2"
         tools:ignore="SpeakableTextPresentCheck">
 
         <ImageView
@@ -114,7 +115,7 @@
         android:text="@string/strItemName1"
         android:textColor="@color/black"
         android:textSize="16dp"
-        app:layout_constraintWidth_percent="0.55"
+        app:layout_constraintWidth_percent="0.57"
         app:layout_constraintBottom_toTopOf="@+id/txtChatsPreview"
         app:layout_constraintStart_toStartOf="@+id/txtChatsPreview"
         app:layout_constraintTop_toTopOf="@+id/cardViewItemPreview"
@@ -132,7 +133,7 @@
         android:textSize="13dp"
         android:ellipsize="end"
         android:lines="1"
-        app:layout_constraintWidth_percent="0.55"
+        app:layout_constraintWidth_percent="0.57"
         app:layout_constraintBottom_toBottomOf="@+id/cardViewItemPreview"
         app:layout_constraintEnd_toEndOf="@+id/viewChatsPreview"
         app:layout_constraintHorizontal_bias="0.5"

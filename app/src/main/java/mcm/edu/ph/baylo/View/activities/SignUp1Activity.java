@@ -50,6 +50,14 @@ public class SignUp1Activity extends AppCompatActivity {
         }
     }
 
+    // method if "<" button is pressed ------------------------------------------------------------------------------------
+    public void backSU1(View v) {
+        Intent i = new Intent(SignUp1Activity.this, MainActivity.class);
+        finish();
+        i.putExtra("key",false);
+        startActivity(i);
+    }
+
     // method if "next" button is pressed ------------------------------------------------------------------------------------
     public void nextPage(View v) {
         Intent i = new Intent(SignUp1Activity.this, SignUp2Activity.class);

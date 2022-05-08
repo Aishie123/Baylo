@@ -1,28 +1,26 @@
 package mcm.edu.ph.baylo.View.activities;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Toast;
-import androidx.appcompat.widget.Toolbar;
+import android.widget.VideoView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
 import mcm.edu.ph.baylo.R;
 import mcm.edu.ph.baylo.View.fragments.AccountPromptFragment;
@@ -32,9 +30,9 @@ import mcm.edu.ph.baylo.View.fragments.ChatsFragment;
 import mcm.edu.ph.baylo.View.fragments.MeFragment;
 
 public class MainActivity extends AppCompatActivity {
-
-    private boolean verified = false;
-
+    VideoView splash;
+    private boolean bayloAcc = false;
+    BottomNavigationView navigation;
     final Fragment fragment1 = new HomeFragment();
     final Fragment fragment2 = new LovesFragment();
     final Fragment fragment3 = new ChatsFragment();
@@ -42,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
     final Fragment fragVerify = new AccountPromptFragment();
     final FragmentManager fm = getSupportFragmentManager();
     Fragment active = fragment1;
+
+    private AppBarConfiguration mAppBarConfiguration;
+    protected Dialog mSplashDialog;
 
     @SuppressLint("UseSupportActionBar")
     @Override
@@ -53,25 +54,19 @@ public class MainActivity extends AppCompatActivity {
             w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS); // for layout to overlap with status bar
         }
 
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-
-        setContentView(R.layout.activity_main);
-
-
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
-
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-            verified = extras.getBoolean("key");
+        MyStateSaver data = (MyStateSaver) getLastNonConfigurationInstance();
+        if (data != null) {
+            // Show splash screen if still loading
+            if (data.showSplashScreen) {
+                showSplashScreen();
+            }
+            initUI();
+            checkAcc();
+        } else {
+            showSplashScreen();
+            initUI();
+            checkAcc();
         }
-
-        fm.beginTransaction().add(R.id.main_container, fragVerify, "5").hide(fragVerify).commit();
-        fm.beginTransaction().add(R.id.main_container, fragment4, "4").hide(fragment4).commit();
-        fm.beginTransaction().add(R.id.main_container, fragment3, "3").hide(fragment3).commit();
-        fm.beginTransaction().add(R.id.main_container, fragment2, "2").hide(fragment2).commit();
-        fm.beginTransaction().add(R.id.main_container, fragment1, "1").commit();
 
     }
 
@@ -87,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
 
                 case R.id.navigation_loves:
-                    if (verified){
+                    if (bayloAcc){
                         fm.beginTransaction().hide(active).show(fragment2).commit();
                         active = fragment2;
                     }
@@ -95,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
 
                 case R.id.navigation_chats:
-                    if (verified){
+                    if (bayloAcc){
                         fm.beginTransaction().hide(active).show(fragment3).commit();
                         active = fragment3;
                     }
@@ -103,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
 
                 case R.id.navigation_me:
-                    if (verified){
+                    if (bayloAcc){
                         fm.beginTransaction().hide(active).show(fragment4).commit();
                         active = fragment4;
                     }
@@ -113,6 +108,28 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
     };
+
+    private void initUI() {
+        setContentView(R.layout.activity_main);
+
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+
+        fm.beginTransaction().add(R.id.main_container, fragVerify, "5").hide(fragVerify).commit();
+        fm.beginTransaction().add(R.id.main_container, fragment4, "4").hide(fragment4).commit();
+        fm.beginTransaction().add(R.id.main_container, fragment3, "3").hide(fragment3).commit();
+        fm.beginTransaction().add(R.id.main_container, fragment2, "2").hide(fragment2).commit();
+        fm.beginTransaction().add(R.id.main_container, fragment1, "1").commit();
+    }
+
+    private void checkAcc(){
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            bayloAcc = extras.getBoolean("key");
+        }
+    }
 
     public void openChat(View v) {
         Intent i = new Intent(MainActivity.this, MessageActivity.class);
@@ -138,4 +155,53 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+// methods for splash screen --------------------------------------------------------------------------------------------------------------------
+
+    @Override
+    public Object onRetainCustomNonConfigurationInstance() {
+        MyStateSaver data = new MyStateSaver();
+        // Save your important data here
+
+        if (mSplashDialog != null) {
+            data.showSplashScreen = true;
+            removeSplashScreen();
+        }
+        return data;
+    }
+
+    /**
+     * Removes the Dialog that displays the splash screen
+     */
+    protected void removeSplashScreen() {
+        if (mSplashDialog != null) {
+            mSplashDialog.dismiss();
+            mSplashDialog = null;
+        }
+    }
+
+    /**
+     * Shows the splash screen over the full Activity
+     */
+    protected void showSplashScreen() {
+        mSplashDialog = new Dialog(this, R.style.SplashScreen);
+        mSplashDialog.setContentView(R.layout.splashscreen);
+
+        mSplashDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        mSplashDialog.setCancelable(false);
+        mSplashDialog.show();
+
+        // Set Runnable to remove splash screen just in case
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                removeSplashScreen();
+            }
+        }, 4100);
+    }
+
+    private class MyStateSaver {
+        public boolean showSplashScreen = false;
+        // Your other important fields here
+    }
 }
