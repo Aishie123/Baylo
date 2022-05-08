@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--suppress CheckTagEmptyBody -->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -220,7 +221,7 @@
                     android:ellipsize="end"
                     android:lines="1"
                     android:padding="8dip"
-                    android:text="NINTENDO SWITCH V2"
+                    android:text="@string/strItemName1"
                     android:textColor="@color/accentColor2"
                     android:textSize="18sp" />
 
@@ -232,7 +233,7 @@
                     android:fontFamily="@font/dosis_semibold"
                     android:gravity="start"
                     android:padding="8dip"
-                    android:text="CASIO FX-991EX CALCULATOR"
+                    android:text="@string/strItemName2"
                     android:textColor="@color/accentColor2"
                     android:textSize="18sp" />
             </TableRow>
@@ -275,7 +276,7 @@
                     android:paddingTop="8dip"
                     android:paddingRight="8dip"
                     android:paddingBottom="4dip"
-                    android:text="With 128gb memory card and..."
+                    android:text="@string/strItemDes1"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
 
@@ -288,7 +289,7 @@
                     android:paddingTop="8dip"
                     android:paddingRight="8dip"
                     android:paddingBottom="4dip"
-                    android:text="A calculator good for engineers"
+                    android:text="@string/strItemDes2"
                     android:ellipsize="end"
                     android:lines="1"
                     android:textColor="@color/black"
@@ -307,7 +308,7 @@
                     android:paddingLeft="8dip"
                     android:paddingRight="8dip"
                     android:paddingBottom="10dip"
-                    android:text="2.7 km away"
+                    android:text="@string/strItemDis1"
                     android:textColor="@color/black"
                     android:textSize="12sp" />
 
@@ -321,7 +322,7 @@
                     android:paddingLeft="8dip"
                     android:paddingRight="8dip"
                     android:paddingBottom="10dip"
-                    android:text="1.4 km away"
+                    android:text="@string/strItemDis2"
                     android:textColor="@color/black"
                     android:textSize="12sp" />
             </TableRow>
@@ -370,7 +371,7 @@
                     android:ellipsize="end"
                     android:lines="1"
                     android:padding="8dip"
-                    android:text="HONEY BUTTER ALMOND"
+                    android:text="@string/strItemName3"
                     android:textColor="@color/accentColor2"
                     android:textSize="18sp" />
 
@@ -381,7 +382,7 @@
                     android:gravity="start"
                     android:lines="1"
                     android:padding="8dip"
-                    android:text="JBL FLIP 5"
+                    android:text="@string/strItemName4"
                     android:textColor="@color/accentColor2"
                     android:textSize="18sp" />
             </TableRow>
@@ -423,7 +424,7 @@
                     android:paddingTop="8dip"
                     android:paddingRight="8dip"
                     android:paddingBottom="4dip"
-                    android:text="Korean almonds bought from Big Mart"
+                    android:text="@string/strItemDes3"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
 
@@ -438,7 +439,7 @@
                     android:paddingTop="8dip"
                     android:paddingRight="8dip"
                     android:paddingBottom="4dip"
-                    android:text="Second-hand bluetooth speaker"
+                    android:text="@string/StrItemDes4"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
             </TableRow>
@@ -455,7 +456,7 @@
                     android:paddingLeft="8dip"
                     android:paddingRight="8dip"
                     android:paddingBottom="10dip"
-                    android:text="2.7 km away"
+                    android:text="@string/strItemDis3"
                     android:textColor="@color/black"
                     android:textSize="12sp" />
 
@@ -469,7 +470,7 @@
                     android:paddingLeft="8dip"
                     android:paddingRight="8dip"
                     android:paddingBottom="10dip"
-                    android:text="1.4 km away"
+                    android:text="@string/strItemDis4"
                     android:textColor="@color/black"
                     android:textSize="12sp" />
             </TableRow>

@@ -26,6 +26,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_home, container, false);
+
         initUI(); // initializing UI
         hideScrollBar();
         setSearchTypeface();

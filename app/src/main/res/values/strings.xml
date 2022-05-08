@@ -14,4 +14,17 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="strItemName1">NINTENDO SWITCH V2</string>
+    <string name="strItemName2">CASIO FX-991EX CALCULATOR</string>
+    <string name="strItemDes1">With 128gb memory card and… </string>
+    <string name="strItemDes2">A calculator good for engineers</string>
+    <string name="strItemDis1">2.7 km away</string>
+    <string name="strItemDis2">1.4 km away</string>
+    <string name="strItemName3">HONEY BUTTER ALMOND</string>
+    <string name="strItemName4">JBL FLIP 5</string>
+    <string name="strItemDes3">Korean almonds bought from Big Mart</string>
+    <string name="StrItemDes4">Second-hand bluetooth speaker</string>
+    <string name="strItemDis3">2.2 km away</string>
+    <string name="strItemDis4">3.1 km away</string>
+    <string name="strItemMsg1">Hi! I’d like to inquire about your Nintendo Switch V2.</string>
 </resources>

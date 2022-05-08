@@ -8,25 +8,6 @@
     tools:context=".View.activities.MainActivity"
     >
 
-    <!-- Appbar -->
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/Theme.Baylo.AppBarOverlay"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <!-- Toolbar -->
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/white" />
-
-    </com.google.android.material.appbar.AppBarLayout>
-
     <!-- Fragments Container -->
 
     <include
@@ -36,7 +17,7 @@
         app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Bottom Navigation View -->
 

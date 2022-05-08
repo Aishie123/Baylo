@@ -6,18 +6,139 @@
     android:layout_height="match_parent"
     tools:context=".View.fragments.LovesFragment">
 
-    <TextView
-        android:id="@+id/text_dashboard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="This is dashboard fragment"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
+
+    <View
+        android:id="@+id/viewLovesTopBar"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="-30dp"
+        android:layout_marginTop="-15dp"
+        android:layout_marginEnd="-30dp"
+        android:background="@drawable/shadow_box"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <SearchView
+        android:id="@+id/lovesSearchView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bg_search_bar"
+        android:clickable="true"
+        android:iconifiedByDefault="false"
+        android:queryBackground="@android:color/transparent"
+        android:queryHint="Search"
+        app:layout_constraintBottom_toBottomOf="@+id/viewLovesTopBar"
+        app:layout_constraintEnd_toEndOf="@+id/txtLovesTitle"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="@+id/txtLovesTitle"
+        app:layout_constraintTop_toBottomOf="@+id/txtLovesTitle"
+        app:layout_constraintWidth_percent="0.9"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/txtLovesTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/dosis_extrabold"
+        android:gravity="center"
+        android:paddingHorizontal="5dp"
+        android:text="Loves"
+        android:textColor="@color/black"
+        android:textSize="28dp"
+        app:layout_constraintBottom_toTopOf="@+id/lovesSearchView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+
+    <View
+        android:id="@+id/viewLovesPreview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/shadow_box"
+        android:clickable="true"
+        android:onClick="openChat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintDimensionRatio="2:2.1"
+        app:layout_constraintHorizontal_bias="0.099"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewLovesTopBar"
+        app:layout_constraintWidth_percent="0.48"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewItemPreview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:elevation="12dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtLovesProductName"
+        app:layout_constraintDimensionRatio="2:1.5"
+        app:layout_constraintEnd_toEndOf="@+id/viewLovesPreview"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/viewLovesPreview"
+        app:layout_constraintTop_toTopOf="@+id/viewLovesPreview"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintWidth_percent="0.32"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <ImageView
+            android:id="@+id/imgItemPreview"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_item1" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/txtLovesProductName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/dosis_bold"
+        android:lines="1"
+        android:text="@string/strItemName1"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtLovesPreview"
+        app:layout_constraintEnd_toEndOf="@+id/cardViewItemPreview"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/cardViewItemPreview"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewItemPreview"
+        app:layout_constraintWidth_percent="0.32" />
+
+    <TextView
+        android:id="@+id/txtLovesPreview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:alpha="0.3"
+        android:ellipsize="end"
+        android:fontFamily="@font/dosis_light"
+        android:lines="1"
+        android:text="@string/strItemDes1"
+        android:textColor="@color/black"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewLovesPreview"
+        app:layout_constraintEnd_toEndOf="@+id/txtLovesProductName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txtLovesProductName"
+        app:layout_constraintTop_toBottomOf="@+id/txtLovesProductName"
+        app:layout_constraintWidth_percent="0.32" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

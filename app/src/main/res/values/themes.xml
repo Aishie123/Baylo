@@ -12,9 +12,9 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="statusBarBackground">?attr/colorOnPrimary</item>
-        <item name="android:windowLightStatusBar">true</item>
         <!-- Customize your theme here. -->
         <item name="android:windowDrawsSystemBarBackgrounds">false</item>
+
     </style>
 
     <style name="SearchAutoCompleteTextView" parent="Widget.AppCompat.Light.AutoCompleteTextView">
@@ -25,6 +25,14 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light">
         <item name="autoCompleteTextViewStyle">@style/SearchAutoCompleteTextView</item>
     </style>
+
+    <style name="CustomActionBar" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:windowActionBarOverlay">true</item>
+        <!-- Support library compatibility -->
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="windowActionBarOverlay">true</item>
+    </style>
+
 
     <style name="MyDatePickerDialogTheme" parent="android:Theme.Material.Light">
         <item name="android:colorAccent">@color/accentColor1</item>

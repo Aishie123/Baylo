@@ -26,6 +26,7 @@ public class ChatsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_chats, container, false);
+
         initUI();
         setSearchTypeface();
         return v;

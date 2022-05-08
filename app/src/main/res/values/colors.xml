@@ -11,4 +11,5 @@
     <color name="accentColor1">#FF383838</color>
     <color name="accentColor2">#FF9E9E9E</color>
     <color name="accentColor3">#FFDADADA</color>
+    <color name="transparent">#00000000</color>
 </resources>
