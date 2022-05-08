@@ -11,6 +11,8 @@ public class AccountPromptActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide(); //hide the action bar
         setContentView(R.layout.activity_account_prompt);
     }
+
 }

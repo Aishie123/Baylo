@@ -18,30 +18,36 @@ import mcm.edu.ph.baylo.R;
 public class HomeFragment extends Fragment {
 
     private View v;
-    private ScrollView homeScrollView;
+    private ScrollView scrollView;
+    private SearchView searchView;
+    private TextView searchText;
+    private int id;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_home, container, false);
         initUI(); // initializing UI
         hideScrollBar();
-
-        SearchView searchView = v.findViewById(R.id.searchView);
-        int id = searchView.getContext().getResources().getIdentifier("android:id/search_src_text", null, null);
-        TextView searchText = (TextView) searchView.findViewById(id);
-        searchText.setTextSize(14);
-        Typeface tf = ResourcesCompat.getFont(v.getContext(),R.font.dosis_light);
-        searchText.setTypeface(tf);
+        setSearchTypeface();
         return v;
     }
 
+    private void setSearchTypeface(){
+        searchText.setTextSize(14);
+        Typeface tf = ResourcesCompat.getFont(v.getContext(), R.font.dosis_light);
+        searchText.setTypeface(tf);
+    }
+
     private void initUI() {
-       homeScrollView = v.findViewById(R.id.homeScrollView);
+        searchView = v.findViewById(R.id.homeSearchView);
+        id = searchView.getContext().getResources().getIdentifier("android:id/search_src_text", null, null);
+        searchText = searchView.findViewById(id);
+        scrollView = v.findViewById(R.id.homeScrollView);
     }
 
     private void hideScrollBar() {
-        homeScrollView.setVerticalScrollBarEnabled(false);
-        homeScrollView.setHorizontalScrollBarEnabled(false);
+        scrollView.setVerticalScrollBarEnabled(false);
+        scrollView.setHorizontalScrollBarEnabled(false);
     }
 
     @Override

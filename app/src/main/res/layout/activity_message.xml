@@ -4,6 +4,182 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.activities.MessageActivity">
 
+    tools:context=".View.activities.MessageActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="-1dp">
+
+    <View
+        android:id="@+id/viewBottomBar"
+        android:layout_width="0dp"
+        android:layout_height="105dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="-30dp"
+        android:layout_marginEnd="-30dp"
+        android:layout_marginBottom="-15dp"
+        android:background="@drawable/shadow_box"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <View
+        android:id="@+id/viewTopBar"
+        android:layout_width="0dp"
+        android:layout_height="110dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="-30dp"
+        android:layout_marginTop="-15dp"
+        android:layout_marginEnd="-30dp"
+        android:background="@drawable/shadow_box"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/viewSendMessage"
+        android:layout_width="0dp"
+        android:layout_height="39dp"
+        android:layout_centerHorizontal="true"
+        android:alpha="0.3"
+        android:background="@drawable/bg_message_bar"
+        app:layout_constraintBottom_toBottomOf="@+id/viewBottomBar"
+        app:layout_constraintEnd_toEndOf="@+id/viewBottomBar"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="@+id/viewBottomBar"
+        app:layout_constraintTop_toTopOf="@+id/viewBottomBar"
+        app:layout_constraintVertical_bias="0.484"
+        app:layout_constraintWidth_percent="0.7" />
+
+    <View
+        android:id="@+id/viewSentMessage"
+        android:layout_width="190dp"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/bg_message_bar"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewTopBar"
+        app:layout_constraintWidth_percent="0.7" />
+
+    <ImageView
+        android:id="@+id/imgAdd"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewSendMessage"
+        app:layout_constraintEnd_toStartOf="@+id/viewSendMessage"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintTop_toTopOf="@+id/viewSendMessage"
+        app:layout_constraintVertical_bias="0.545"
+        app:layout_constraintWidth_percent="0.1"
+        app:srcCompat="@drawable/ic_baseline_add_circle_24"
+        app:tint="@color/accentColor1" />
+
+    <ImageView
+        android:id="@+id/imgSend"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewSendMessage"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toEndOf="@+id/viewSendMessage"
+        app:layout_constraintTop_toTopOf="@+id/viewSendMessage"
+        app:layout_constraintWidth_percent="0.08"
+        app:srcCompat="@drawable/ic_baseline_send_24"
+        app:tint="@color/accentColor1" />
+
+    <TextView
+        android:id="@+id/txtMsgHint"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:fontFamily="@font/dosis_light"
+        android:text="Type your message..."
+        android:textColor="@color/accentColor1"
+        app:layout_constraintBottom_toBottomOf="@+id/viewSendMessage"
+        app:layout_constraintEnd_toEndOf="@+id/viewSendMessage"
+        app:layout_constraintHorizontal_bias="0.103"
+        app:layout_constraintStart_toStartOf="@+id/viewSendMessage"
+        app:layout_constraintTop_toTopOf="@+id/viewSendMessage"
+        app:layout_constraintVertical_bias="0.526" />
+
+    <TextView
+        android:id="@+id/txtSentMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/dosis_light"
+        android:text="Hi! I’d like to inquire about\nyour Nintendo Switch V2."
+        android:textColor="@color/white"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewSentMessage"
+        app:layout_constraintEnd_toEndOf="@+id/viewSentMessage"
+        app:layout_constraintStart_toStartOf="@+id/viewSentMessage"
+        app:layout_constraintTop_toTopOf="@+id/viewSentMessage" />
+
+    <ImageView
+        android:id="@+id/imgBtnBackMsg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="backToInbox"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.04"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.034"
+        app:layout_constraintWidth_percent="0.04"
+        app:srcCompat="@drawable/img_back_arrow" />
+
+    <TextView
+        android:id="@+id/txtMsgProductName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/dosis_extrabold"
+        android:gravity="center"
+        android:paddingHorizontal="5dp"
+        android:text="NINTENDO SWITCH V2"
+        android:textColor="@color/black"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtMsgProductStatus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgBtnBackMsg"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/txtMsgProductStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/dosis_light"
+        android:gravity="center"
+        android:paddingHorizontal="5dp"
+        android:text="Online"
+        android:textColor="@color/accentColor2"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgBtnBackMsg"
+        app:layout_constraintEnd_toEndOf="@+id/txtMsgProductName"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/txtMsgProductName"
+        app:layout_constraintTop_toBottomOf="@+id/txtMsgProductName" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:alpha="0.3"
+        android:fontFamily="@font/dosis_regular"
+        android:text="8:00AM"
+        android:textColor="@color/accentColor1"
+        app:layout_constraintBottom_toBottomOf="@+id/viewSentMessage"
+        app:layout_constraintEnd_toStartOf="@+id/viewSentMessage" />
 </androidx.constraintlayout.widget.ConstraintLayout>

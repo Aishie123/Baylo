@@ -3,28 +3,38 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-hdpi/bg_message_bar.xml" value="0.4335" />
+        <entry key="app/src/main/res/drawable-mdpi/shadow_box2.xml" value="0.433" />
         <entry key="app/src/main/res/drawable-xhdpi/bg_btn.xml" value="0.3445" />
         <entry key="app/src/main/res/drawable-xhdpi/btn_bg.xml" value="0.3235" />
         <entry key="app/src/main/res/drawable/bg_search_bar.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_baseline_add_circle_24.xml" value="0.4335" />
         <entry key="app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.257" />
         <entry key="app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.257" />
         <entry key="app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.2285" />
+        <entry key="app/src/main/res/drawable/myrect.xml" value="0.2455" />
         <entry key="app/src/main/res/drawable/outline_round.xml" value="0.3295" />
         <entry key="app/src/main/res/drawable/round_outline.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/shadow_box.xml" value="0.2335" />
         <entry key="app/src/main/res/font/dosis_semibold.xml" value="0.3572916666666667" />
         <entry key="app/src/main/res/font/font.xml" value="0.3572916666666667" />
         <entry key="app/src/main/res/layout-v31/fragment_home.xml" value="0.32708333333333334" />
         <entry key="app/src/main/res/layout/activity_account_prompt.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.375" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_message.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_signup1.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_signup2.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_username.xml" value="0.34270833333333334" />
+        <entry key="app/src/main/res/layout/fragment_account_prompt.xml" value="0.27586206896551724" />
+        <entry key="app/src/main/res/layout/fragment_chats.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.21014492753623187" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_me.xml" value="0.34270833333333334" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.4203125" />
-        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/account_menu.xml" value="0.328125" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />
+        <entry key="app/src/main/res/menu/options_menu.xml" value="0.328125" />
       </map>
     </option>
   </component>
@@ -37,7 +47,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.23802083333333332" />
+        <option name="scale" value="0.34270833333333334" />
       </ProjectState>
     </option>
   </component>

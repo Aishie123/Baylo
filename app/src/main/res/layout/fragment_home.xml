@@ -14,15 +14,15 @@
         android:layout_height="0dp"
         android:layout_marginBottom="24dp"
         android:src="@drawable/baylo_logo"
-        app:layout_constraintBottom_toBottomOf="@+id/searchView"
-        app:layout_constraintEnd_toEndOf="@+id/searchView"
+        app:layout_constraintBottom_toBottomOf="@+id/homeSearchView"
+        app:layout_constraintEnd_toEndOf="@+id/homeSearchView"
         app:layout_constraintHeight_percent="0.1"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="@+id/searchView"
+        app:layout_constraintStart_toStartOf="@+id/homeSearchView"
         app:layout_constraintWidth_percent="0.3" />
 
     <SearchView
-        android:id="@+id/searchView"
+        android:id="@+id/homeSearchView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_centerHorizontal="true"

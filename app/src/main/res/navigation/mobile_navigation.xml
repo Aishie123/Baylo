@@ -27,5 +27,5 @@
         android:id="@+id/navigation_me"
         android:name="mcm.edu.ph.baylo.View.fragments.MeFragment"
         android:label="@string/title_chats"
-        tools:layout="@layout/fragment_chats" />
+        tools:layout="@layout/fragment_me" />
 </navigation>

@@ -47,8 +47,9 @@ public class SignUp2Activity extends AppCompatActivity {
     // method if "Create Account" button is pressed ------------------------------------------------------------------------------------
     public void createAccount(View v) {
         Intent i = new Intent(SignUp2Activity.this, MainActivity.class);
-        startActivity(i);
+        i.putExtra("key",true);
         finish();
+        startActivity(i);
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 

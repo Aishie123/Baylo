@@ -48,6 +48,7 @@ public class LogInActivity extends AppCompatActivity {
     public void logIn(View v) {
         Intent i = new Intent(LogInActivity.this, MainActivity.class);
         finish();
+        i.putExtra("key",true);
         startActivity(i);
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
