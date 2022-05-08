@@ -16,7 +16,11 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="strItemName1">NINTENDO SWITCH V2</string>
     <string name="strItemName2">CASIO FX-991EX CALCULATOR</string>
-    <string name="strItemDes1">With 128gb memory card and… </string>
+    <string name="strItemDes1">Complete accessories with box.\nInclusions:
+        \n128gb memory card
+        \nThumb grips
+        \nTempered glass
+        \n3 downloaded games (Zelda BOTW, Mario Odyssey, and Mario Kart) </string>
     <string name="strItemDes2">A calculator good for engineers</string>
     <string name="strItemDis1">2.7 km away</string>
     <string name="strItemDis2">1.4 km away</string>

@@ -8,6 +8,7 @@
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2655" />
         <entry key="app/src/main/res/drawable-xhdpi/bg_btn.xml" value="0.3445" />
         <entry key="app/src/main/res/drawable-xhdpi/btn_bg.xml" value="0.3235" />
+        <entry key="app/src/main/res/drawable/bg_category.xml" value="0.433" />
         <entry key="app/src/main/res/drawable/bg_search_bar.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/bottom_navigation_selector.xml" value="0.2655" />
         <entry key="app/src/main/res/drawable/ic_baseline_add_circle_24.xml" value="0.4335" />
@@ -26,7 +27,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main2.xml" value="0.11891891891891893" />
         <entry key="app/src/main/res/layout/activity_message.xml" value="0.375" />
-        <entry key="app/src/main/res/layout/activity_product_page.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_product_page.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_signup1.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_signup2.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.2390625" />

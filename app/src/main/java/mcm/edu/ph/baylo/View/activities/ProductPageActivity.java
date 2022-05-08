@@ -2,6 +2,7 @@ package mcm.edu.ph.baylo.View.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -26,5 +27,11 @@ public class ProductPageActivity extends AppCompatActivity {
     // method if "<" button is pressed ------------------------------------------------------------------------------------
     public void backFromProduct(View v) {
         finish();
+    }
+
+    // method if "Baylo" button is pressed ------------------------------------------------------------------------------------
+    public void goBaylo(View v) {
+        Intent i = new Intent(ProductPageActivity.this, MessageActivity.class);
+        startActivity(i);
     }
 }
