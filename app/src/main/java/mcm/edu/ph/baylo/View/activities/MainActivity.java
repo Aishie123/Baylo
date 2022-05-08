@@ -4,27 +4,24 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.KeyCharacterMap;
-import android.view.KeyEvent;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewConfiguration;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
+import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import mcm.edu.ph.baylo.R;
@@ -36,66 +33,81 @@ import mcm.edu.ph.baylo.View.fragments.MeFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-    private boolean bayloAcc = false;
-    private Fragment fragment;
+    private boolean verified = false;
 
+    final Fragment fragment1 = new HomeFragment();
+    final Fragment fragment2 = new LovesFragment();
+    final Fragment fragment3 = new ChatsFragment();
+    final Fragment fragment4 = new MeFragment();
+    final Fragment fragVerify = new AccountPromptFragment();
+    final FragmentManager fm = getSupportFragmentManager();
+    Fragment active = fragment1;
+
+    @SuppressLint("UseSupportActionBar")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().hide(); //hide the action bar
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            Window w = getWindow();
-            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        }
         setContentView(R.layout.activity_main);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            bayloAcc = extras.getBoolean("key");
+            verified = extras.getBoolean("key");
         }
 
-        BottomNavigationView navView = findViewById(R.id.nav_view);
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
-        NavigationUI.setupWithNavController(navView, navController);
-        navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @SuppressLint("NonConstantResourceId")
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item)
-            {
-                fragment = null;
-                switch (item.getItemId())
-                {
-                    case R.id.navigation_home:
-                        fragment = new HomeFragment();
-                        break;
-
-                    case R.id.navigation_loves:
-                        if (bayloAcc) { fragment = new LovesFragment(); }
-                        else { fragment = new AccountPromptFragment(); }
-                        break;
-
-                    case R.id.navigation_chats:
-                        if (bayloAcc) { fragment = new ChatsFragment(); }
-                        else { fragment = new AccountPromptFragment(); }
-                        break;
-
-                    case R.id.navigation_me:
-                        if (bayloAcc) { fragment = new MeFragment(); }
-                        else { fragment = new AccountPromptFragment(); }
-                        break;
-
-                    default:
-                        Toast.makeText(MainActivity.this, "Item can't be opened",
-                                Toast.LENGTH_LONG).show();
-                        break;
-                }
-                replaceFragment();
-                return true;
-            }
-        });
+        fm.beginTransaction().add(R.id.main_container, fragVerify, "5").hide(fragVerify).commit();
+        fm.beginTransaction().add(R.id.main_container, fragment4, "4").hide(fragment4).commit();
+        fm.beginTransaction().add(R.id.main_container, fragment3, "3").hide(fragment3).commit();
+        fm.beginTransaction().add(R.id.main_container, fragment2, "2").hide(fragment2).commit();
+        fm.beginTransaction().add(R.id.main_container, fragment1, "1").commit();
 
     }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.navigation_home:
+                    fm.beginTransaction().hide(active).show(fragment1).commit();
+                    active = fragment1;
+                    return true;
+
+                case R.id.navigation_loves:
+                    if (verified){
+                        fm.beginTransaction().hide(active).show(fragment2).commit();
+                        active = fragment2;
+                    }
+                    else{ fm.beginTransaction().hide(active).show(fragVerify).commit(); active = fragVerify; }
+                    return true;
+
+                case R.id.navigation_chats:
+                    if (verified){
+                        fm.beginTransaction().hide(active).show(fragment3).commit();
+                        active = fragment3;
+                    }
+                    else{ fm.beginTransaction().hide(active).show(fragVerify).commit(); active = fragVerify; }
+                    return true;
+
+                case R.id.navigation_me:
+                    if (verified){
+                        fm.beginTransaction().hide(active).show(fragment4).commit();
+                        active = fragment4;
+                    }
+                    else{ fm.beginTransaction().hide(active).show(fragVerify).commit(); active = fragVerify; }
+                    return true;
+            }
+            return false;
+        }
+    };
 
     public void openChat(View v) {
         Intent i = new Intent(MainActivity.this, MessageActivity.class);
@@ -114,15 +126,21 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    private void replaceFragment(){
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
-        transaction.addToBackStack(null);
-        if (fragment != null) {
-            transaction.replace(R.id.container, fragment, null);
-        }
-        transaction.commit();
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.options_menu, menu);
+        return super.onCreateOptionsMenu(menu);
     }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
 
+        //if (id == R.id.option_settings) {
+            //startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+            //return true;
+        //}
+
+        return super.onOptionsItemSelected(item);
+    }
 
 }
