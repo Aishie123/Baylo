@@ -21,7 +21,7 @@
         <entry key="app/src/main/res/layout-v31/fragment_home.xml" value="0.32708333333333334" />
         <entry key="app/src/main/res/layout/activity_account_prompt.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.375" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_message.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_signup1.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_signup2.xml" value="0.335" />
@@ -30,6 +30,7 @@
         <entry key="app/src/main/res/layout/fragment_chats.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.21014492753623187" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/fragment_loves.xml" value="0.2617753623188406" />
         <entry key="app/src/main/res/layout/fragment_me.xml" value="0.34270833333333334" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.4203125" />
         <entry key="app/src/main/res/menu/account_menu.xml" value="0.328125" />

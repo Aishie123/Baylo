@@ -54,11 +54,7 @@ public class MainActivity extends AppCompatActivity {
         if (extras != null) {
             bayloAcc = extras.getBoolean("key");
         }
-        //NavHostFragment navHostFragment =
-        //        (NavHostFragment) getSupportFragmentManager()
-        //                .findFragmentById(R.id.nav_host_fragment_activity_main);
-        //BottomNavigationView navView = findViewById(R.id.nav_view);
-        //NavController navController = navHostFragment.getNavController();
+
         BottomNavigationView navView = findViewById(R.id.nav_view);
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupWithNavController(navView, navController);
@@ -127,6 +123,6 @@ public class MainActivity extends AppCompatActivity {
         }
         transaction.commit();
     }
-    
+
 
 }
