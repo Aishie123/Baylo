@@ -181,11 +181,16 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
-                    android:layout_height="240dp"
+                    android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:onClick="openItem"
                     app:cardCornerRadius="15dp"
                     app:cardElevation="5dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="240dp"
+                        >
 
                     <ImageView
                         android:id="@+id/imgItem1"
@@ -193,21 +198,49 @@
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop"
                         android:src="@drawable/img_item1" />
+
+                        <ImageView
+                            android:id="@+id/imgHeart1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="6dp"
+                            android:src="@drawable/img_heartfull"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
-                    android:layout_height="240dp"
+                    android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     app:cardCornerRadius="15dp"
                     app:cardElevation="5dp">
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="240dp"
+                        >
 
-                    <ImageView
-                        android:id="@+id/imgItem2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/img_item2" />
+                        <ImageView
+                            android:id="@+id/imgItem2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/img_item2" />
+
+                        <ImageView
+                            android:id="@+id/imgHeart2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="24dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="6dp"
+                            android:src="@drawable/img_heartblank"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
 
             </TableRow>
@@ -333,34 +366,69 @@
 
             <TableRow>
 
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
-                    android:layout_height="240dp"
+                    android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     app:cardCornerRadius="15dp"
                     app:cardElevation="5dp">
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="240dp"
+                        >
 
-                    <ImageView
-                        android:id="@+id/imgItem3"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/img_item3" />
+                        <ImageView
+                            android:id="@+id/imgItem3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/img_item3" />
+
+                        <ImageView
+                            android:id="@+id/imgHeart3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="24dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="6dp"
+                            android:src="@drawable/img_heartblank"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
-                    android:layout_height="240dp"
+                    android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     app:cardCornerRadius="15dp"
                     app:cardElevation="5dp">
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="240dp"
+                        >
 
-                    <ImageView
-                        android:id="@+id/imgItem4"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/img_item4" />
+                        <ImageView
+                            android:id="@+id/imgItem4"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/img_item4" />
+
+                        <ImageView
+                            android:id="@+id/imgHeart4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="24dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="6dp"
+                            android:src="@drawable/img_heartblank"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
                 </androidx.cardview.widget.CardView>
 
             </TableRow>
