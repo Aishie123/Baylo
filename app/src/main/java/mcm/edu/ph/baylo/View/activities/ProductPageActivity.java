@@ -24,8 +24,7 @@ import mcm.edu.ph.baylo.R;
 
 public class ProductPageActivity extends AppCompatActivity implements OnMapReadyCallback {
 
-    CircleOptions circleOptions = new CircleOptions();
-    GoogleMap map;
+    private boolean bayloAcc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +39,16 @@ public class ProductPageActivity extends AppCompatActivity implements OnMapReady
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        checkAcc();
+    }
+
+    // checking if user logged in ------------------------------------------------------------------------------------
+    private void checkAcc(){
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            bayloAcc = extras.getBoolean("key");
+        }
     }
 
     // method if "<" button is pressed ------------------------------------------------------------------------------------
@@ -49,33 +58,32 @@ public class ProductPageActivity extends AppCompatActivity implements OnMapReady
 
     // method if "Baylo" button is pressed ------------------------------------------------------------------------------------
     public void goBaylo(View v) {
-        Intent i = new Intent(ProductPageActivity.this, MessageActivity.class);
-        startActivity(i);
+        if (bayloAcc){
+            Intent i = new Intent(ProductPageActivity.this, MessageActivity.class);
+            startActivity(i);
+        }
+        else{
+            Intent i = new Intent(ProductPageActivity.this, AccountPromptActivity.class);
+            startActivity(i);
+        }
     }
 
+    // creating a circle around approximate location ------------------------------------------------------------------------------------
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        map = googleMap;
-        map.getUiSettings().setScrollGesturesEnabled(false);
+        googleMap.getUiSettings().setScrollGesturesEnabled(false);
         LatLng location = new LatLng(7.115294, 125.639103);
-        drawCircle(location, map);
-        map.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 12.0f));
+        drawCircle(location, googleMap);
+        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 12.0f));
     }
 
     private void drawCircle(LatLng point, GoogleMap map){
-        // Instantiating CircleOptions to draw a circle around the marker
         CircleOptions circleOptions = new CircleOptions();
-        // Specifying the center of the circle
-        circleOptions.center(point);
-        // Radius of the circle
-        circleOptions.radius(2000);
-        // Border color of the circle
-        circleOptions.strokeColor(Color.BLACK);
-        // Fill color of the circle
-        circleOptions.fillColor(0x30000000);
-        // Border width of the circle
-        circleOptions.strokeWidth(5);
-        // Adding the circle to the GoogleMap
+        circleOptions.center(point)
+                .radius(2000)
+                .strokeColor(Color.BLACK)
+                .fillColor(0x30000000)
+                .strokeWidth(5);
         map.addCircle(circleOptions);
     }
 }

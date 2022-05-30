@@ -134,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void openItem(View v) {
         Intent i = new Intent(MainActivity.this, ProductPageActivity.class);
+        i.putExtra("key", bayloAcc);
         startActivity(i);
     }
 
