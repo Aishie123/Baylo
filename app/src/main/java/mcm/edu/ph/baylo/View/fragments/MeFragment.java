@@ -28,7 +28,9 @@ public class MeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_me, container, false);
+
         Toolbar toolbar = (Toolbar) v.findViewById(R.id.toolbar);
+
         toolbar.inflateMenu(R.menu.options_menu);
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @SuppressLint("NonConstantResourceId")
@@ -76,6 +78,7 @@ public class MeFragment extends Fragment {
     return v;
     }
 
+    // ----------------------------------------------------------------------------------------------------------
     @Override
     public void onDestroyView() {
         super.onDestroyView();

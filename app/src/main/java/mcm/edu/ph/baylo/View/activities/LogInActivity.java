@@ -37,7 +37,6 @@ public class LogInActivity extends AppCompatActivity {
 
 
     // method for showing and hiding password ------------------------------------------------------------------------------------
-
     public void showHideLIPass(View v) {
         if(v.getId()==R.id.imgBtnLIShowPass){
             if(etLIPassword.getTransformationMethod().equals(PasswordTransformationMethod.getInstance())){

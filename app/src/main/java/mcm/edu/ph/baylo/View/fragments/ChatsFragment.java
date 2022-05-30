@@ -32,18 +32,21 @@ public class ChatsFragment extends Fragment {
         return v;
     }
 
+    // changing the typeface of the search bar ------------------------------------------------------------------------------
     private void setSearchTypeface(){
         searchText.setTextSize(14);
         Typeface tf = ResourcesCompat.getFont(v.getContext(), R.font.dosis_light);
         searchText.setTypeface(tf);
     }
 
+    // initializing UI ------------------------------------------------------------------------------
     private void initUI() {
         searchView = v.findViewById(R.id.chatSearchView);
         id = searchView.getContext().getResources().getIdentifier("android:id/search_src_text", null, null);
         searchText = searchView.findViewById(id);
     }
 
+    // --------------------------------------------------------------------------------------------------------------------
     @Override
     public void onDestroyView() {
         super.onDestroyView();

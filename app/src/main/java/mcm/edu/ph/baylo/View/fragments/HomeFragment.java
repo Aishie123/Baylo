@@ -33,12 +33,14 @@ public class HomeFragment extends Fragment {
         return v;
     }
 
+    // changing the typeface of the search bar ------------------------------------------------------------------------------
     private void setSearchTypeface(){
         searchText.setTextSize(14);
         Typeface tf = ResourcesCompat.getFont(v.getContext(), R.font.dosis_light);
         searchText.setTypeface(tf);
     }
 
+    // initializing UI ------------------------------------------------------------------------------
     private void initUI() {
         searchView = v.findViewById(R.id.homeSearchView);
         id = searchView.getContext().getResources().getIdentifier("android:id/search_src_text", null, null);
@@ -46,11 +48,13 @@ public class HomeFragment extends Fragment {
         scrollView = v.findViewById(R.id.homeScrollView);
     }
 
+    // hiding scroll bar ------------------------------------------------------------------------------
     private void hideScrollBar() {
         scrollView.setVerticalScrollBarEnabled(false);
         scrollView.setHorizontalScrollBarEnabled(false);
     }
 
+    // -----------------------------------------------------------------------------------------------
     @Override
     public void onDestroyView() {
         super.onDestroyView();

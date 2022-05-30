@@ -32,16 +32,14 @@ import mcm.edu.ph.baylo.View.fragments.MeFragment;
 public class MainActivity extends AppCompatActivity {
 
     private boolean bayloAcc = false;
-    BottomNavigationView navigation;
-    final Fragment fragment1 = new HomeFragment();
-    final Fragment fragment2 = new LovesFragment();
-    final Fragment fragment3 = new ChatsFragment();
-    final Fragment fragment4 = new MeFragment();
-    final Fragment fragVerify = new AccountPromptFragment();
-    final FragmentManager fm = getSupportFragmentManager();
-    Fragment active = fragment1;
-
-    private AppBarConfiguration mAppBarConfiguration;
+    private BottomNavigationView navigation;
+    private final Fragment fragment1 = new HomeFragment();
+    private final Fragment fragment2 = new LovesFragment();
+    private final Fragment fragment3 = new ChatsFragment();
+    private final Fragment fragment4 = new MeFragment();
+    private final Fragment fragVerify = new AccountPromptFragment();
+    private final FragmentManager fm = getSupportFragmentManager();
+    private Fragment active = fragment1;
     protected Dialog mSplashDialog;
 
     @SuppressLint("UseSupportActionBar")
@@ -110,12 +108,12 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    // initializing UI ------------------------------------------------------------------------------------
     private void initUI() {
         setContentView(R.layout.activity_main);
 
         navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
 
         fm.beginTransaction().add(R.id.main_container, fragVerify, "5").hide(fragVerify).commit();
         fm.beginTransaction().add(R.id.main_container, fragment4, "4").hide(fragment4).commit();
@@ -124,12 +122,15 @@ public class MainActivity extends AppCompatActivity {
         fm.beginTransaction().add(R.id.main_container, fragment1, "1").commit();
     }
 
+    // checking if user logged in ------------------------------------------------------------------------------------
     private void checkAcc(){
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             bayloAcc = extras.getBoolean("key");
         }
     }
+
+    // onClick methods ------------------------------------------------------------------------------------
 
     public void openItem(View v) {
         Intent i = new Intent(MainActivity.this, ProductPageActivity.class);
@@ -153,19 +154,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    @Override
-    public boolean onPrepareOptionsMenu(final Menu menu) {
-        getMenuInflater().inflate(R.menu.options_menu, menu);
-
-        return super.onCreateOptionsMenu(menu);
-    }
-
-// methods for splash screen --------------------------------------------------------------------------------------------------------------------
+    // methods for splash screen --------------------------------------------------------------------------------------------------------------------
 
     @Override
     public Object onRetainCustomNonConfigurationInstance() {
         MyStateSaver data = new MyStateSaver();
-        // Save your important data here
 
         if (mSplashDialog != null) {
             data.showSplashScreen = true;
@@ -174,9 +167,7 @@ public class MainActivity extends AppCompatActivity {
         return data;
     }
 
-    /**
-     * Removes the Dialog that displays the splash screen
-     */
+    // Removes the Dialog that displays the splash screen
     protected void removeSplashScreen() {
         if (mSplashDialog != null) {
             mSplashDialog.dismiss();
@@ -184,9 +175,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * Shows the splash screen over the full Activity
-     */
+    // Shows the splash screen over the full Activity
     protected void showSplashScreen() {
         mSplashDialog = new Dialog(this, R.style.SplashScreen);
         mSplashDialog.setContentView(R.layout.splashscreen);
@@ -195,7 +184,6 @@ public class MainActivity extends AppCompatActivity {
         mSplashDialog.setCancelable(false);
         mSplashDialog.show();
 
-        // Set Runnable to remove splash screen just in case
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -207,6 +195,5 @@ public class MainActivity extends AppCompatActivity {
 
     private class MyStateSaver {
         public boolean showSplashScreen = false;
-        // Your other important fields here
     }
 }
